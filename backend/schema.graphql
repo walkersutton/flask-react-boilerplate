@@ -1,0 +1,38 @@
+schema {
+	query: Query
+	mutation: Mutation
+}
+
+type Todo {
+	id: ID!
+	completed: Boolean!
+	description: String!
+	dueDate: String!
+}
+type TodoResult {
+	success: Boolean!
+	errors: [String]
+	todo: Todo
+}
+type TodosResult {
+	success: Boolean!
+	errors: [String]
+	todos: [Todo]
+}
+type deleteTodoResult {
+	success: Boolean!
+	errors: [String]
+	exception: [String]!
+}
+
+type Query {
+	todo(roomId: ID!): TodoResult!
+	todos: TodosResult!
+}
+
+type Mutation {
+	createTodo(description: String!, dueDate: String!): TodoResult!
+	deleteTodo(todoId: ID!): deleteTodoResult!
+	markDone(todoId: ID!): TodoResult!
+	updateDueDate(todoId: ID!, newDate: String!): TodoResult!
+}
