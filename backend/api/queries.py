@@ -1,12 +1,12 @@
-from flask_sqlalchemy_session import current_session
 from ariadne import convert_kwargs_to_snake_case
 
-from models import Todo
+from api.models import Todo
+from database.database import db
 
 @convert_kwargs_to_snake_case
 def resolve_todo(obj, info, todo_id):
 	try:
-		todo = current_session.query(todo).get(todo_id)
+		todo = db.session.query(Todo).get(todo_id)
 		payload = {
 			'success': True,
 			'todo': todo.to_dict()
@@ -20,7 +20,7 @@ def resolve_todo(obj, info, todo_id):
 
 def resolve_todos(obj, info):
 	try:
-		todos = [todo.to_dict() for todo in current_session.query(Todo).all()]
+		todos = [todo.to_dict() for todo in db.session.query(Todo).all()]
 		payload = {
 			'success': True,
 			'todos': todos

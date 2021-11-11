@@ -22,7 +22,6 @@ type TodosResult {
 type deleteTodoResult {
 	success: Boolean!
 	errors: [String]
-	exception: [String]!
 }
 
 type Query {
