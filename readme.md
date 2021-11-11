@@ -55,14 +55,14 @@ npx TODO
 
 ## Resources
 
-### React Resources
-* [React + Flask + GraphQL](https://blog.sethcorker.com/how-to-create-a-react-flask-graphql-project/) by [@Darth_Knoppix](https://twitter.com/darth_knoppix)
-	* [GitHub Repo](https://github.com/Darth-Knoppix/flask-graphql-react)
-
-### Flask and GraphQL Flask Resources
+### Backend
 * [Flask GraphQL Example](https://github.com/andreisoriga/flask-graphql-example) by [@andreisoriga](https://github.com/andreisoriga)
 * [Build a GraphQL API with Python, Flask and Ariadne](https://www.twilio.com/blog/graphql-api-python-flask-ariadne) by [@mistr_qra](https://twitter.com/mistr_qra)
 	* [GitHub Repo](https://github.com/mrkiura/todo-api-graphql)
 * [Flask Project Structure](https://codersdiaries.com/blog/flask-project-structure)
 * [Flask Migrate Example 1](https://github.com/CristianoYL/flask-migrate-example) by [@CristianoYL](https://github.com/CristianoYL)
 * [Flask Migrate Example 2](https://github.com/RobertBoes/flask-migrate-example) by [@Robert_Boes](https://twitter.com/robert_boes)
+
+### Frontend
+* [React + Flask + GraphQL](https://blog.sethcorker.com/how-to-create-a-react-flask-graphql-project/) by [@Darth_Knoppix](https://twitter.com/darth_knoppix)
+	* [GitHub Repo](https://github.com/Darth-Knoppix/flask-graphql-react)
