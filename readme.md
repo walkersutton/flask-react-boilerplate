@@ -9,34 +9,27 @@ git clone https://github.com/walkersutton/flask-react-todo-app.git
 cd flask-react-todo-app
 ```
 
-### Initialize Database
+### Flask Backend Set Up
 
 ```sh
 cd backend
 python3 -m venv venv
 source venv/bin/activate
-python
-```
-
-### Configure Flask Backend
-
-```sh
 pip install -r requirements.txt
-export FLASK_APP=server.py
 flask db init
 flask db migrate -m 'Initial migration.'
 flask db upgrade
 ```
 
 ### Run Flask Backend
-
 ```sh
+source venv/bin/activate
+export FLASK_APP=app.py
 flask run
 ```
 
 ### Run React Frontend
-
-In a new shell:
+**In a new shell**, let's set up React.
 
 ```sh
 cd frontend
