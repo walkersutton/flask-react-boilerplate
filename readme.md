@@ -42,7 +42,7 @@ npx TODO
 
 * [Flask](https://flask.palletsprojects.com/) - a micro web framework written in Python
 * [GraphQL](https://graphql.org/) - a query language for APIs and a runtime for fulfilling those queries with your existing data
-	* [ariadne] (https://ariadnegraphql.org/) - a Python library for implementing GraphQL servers
+	* [ariadne](https://ariadnegraphql.org/) - a Python library for implementing GraphQL servers
 * [SQLite](https://www.sqlite.org/index.html) - a small, fast, self-contained, high-reliability, full-featured, SQL database engine
 	* [SQLAlchemy](https://www.sqlalchemy.org/) - a Python SQL toolkit
 		* [Flask SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/) - an extension for Flask that adds support for SQLAlchemy
