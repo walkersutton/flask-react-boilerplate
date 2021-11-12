@@ -25,7 +25,7 @@ type deleteTodoResult {
 }
 
 type Query {
-	todo(roomId: ID!): TodoResult!
+	todo(todoId: ID!): TodoResult!
 	todos: TodosResult!
 }
 
