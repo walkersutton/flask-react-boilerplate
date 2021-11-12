@@ -75,11 +75,34 @@ function deleteTodo(todoId, callback) {
 		.catch(console.error)
 }
 
+
+function markDone(todoId, callback) {
+	fetch(`/graphql`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			query: `mutation {
+				markDone(todoId: ${todoId}) {
+					success
+					errors
+					todo { id description dueDate completed}
+				}
+			}`,
+		}),
+	})
+		.then(res => res.json())
+		.then(res => callback(res.data))
+		.catch(console.error)
+}
+
 function App() {
 	const [myTodos, setMyTodos] = useState([])
 	const [todo, setTodo] = useState({
-		description: "",
-		dueDate: ""
+		description: " ",
+		dueDate: " ",
+		completed: false
 	})
 
 	useEffect(() => {
@@ -101,6 +124,7 @@ function App() {
 	return (
 		<div className="App">
 			<header className="App-header">
+				<h2>Create a new Todo</h2>
 				<form onSubmit={onSubmitTodoForm}>
 					<label>
 						Description:{""}
@@ -110,7 +134,7 @@ function App() {
 								setTodo({ ...todo, description: target.value })
 							}
 						/>
-					</label>
+					</label><br/>
 					<label>
 						DueDate:{""}
 						<input
@@ -119,19 +143,28 @@ function App() {
 								setTodo({ ...todo, dueDate: target.value })
 							}
 						/>
-					</label>
+					</label><br/>
 					<input type="submit" value="createTodo" />
 				</form>
+				<h2>Todo List:</h2>
 				<ul>
 					{myTodos.map(todo => (
-						<li key={todo.id}>
-							{todo.description} - {todo.dueDate}
-							<button onClick={() => deleteTodo(todo.id, () =>
-								{
-									getTodos((data) => setMyTodos(data));
-								})}>
-								delete
-							</button>
+						<li key={ todo.id }>
+							<form>
+								completed:
+								<input type="checkbox" checked={ todo.completed } onChange={() => markDone(todo.id, () =>
+									{
+										getTodos((data) => setMyTodos(data));
+								})}/><br/>
+								{ todo.description }<br/>
+								{ todo.dueDate }<br/>
+								<button onClick={() => deleteTodo(todo.id, () =>
+									{
+										getTodos((data) => setMyTodos(data));
+									})}>
+									delete
+								</button>
+							</form>
 						</li>
 					))}
 				</ul>
