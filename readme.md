@@ -9,7 +9,7 @@ git clone https://github.com/walkersutton/flask-react-todo-app.git
 cd flask-react-todo-app
 ```
 
-### Flask Backend Set Up
+### Flask Backend Initial Set Up
 
 ```sh
 cd backend
@@ -33,8 +33,12 @@ flask run
 
 ```sh
 cd frontend
-npx TODO
+npm i
+npm start
 ```
+
+## TODO
+* React is ugly - needs editing
 
 ## Libraries
 
