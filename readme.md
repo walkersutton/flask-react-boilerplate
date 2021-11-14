@@ -1,5 +1,9 @@
 # Flask React Todo App
 
+## Requirements
+* [Python 3](https://www.python.org/downloads/)
+* [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
 ## Quick Start
 
 ### Clone Repo
